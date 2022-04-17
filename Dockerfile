@@ -55,7 +55,6 @@ COPY . /app
 RUN chmod +x /app/conf.d/websockify.sh
 RUN chmod +x /app/run.sh
 RUN chmod +x /app/expect_vnc.sh
-RUN apt-key add /app/linux_signing_key.pub
 RUN set -ex
 
 
