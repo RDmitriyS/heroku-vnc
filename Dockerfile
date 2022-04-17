@@ -55,14 +55,8 @@ COPY . /app
 RUN chmod +x /app/conf.d/websockify.sh
 RUN chmod +x /app/run.sh
 RUN chmod +x /app/expect_vnc.sh
-RUN echo "deb http://deb.anydesk.com/ all main"  >> /etc/apt/sources.list
-RUN wget --no-check-certificate -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY -O /app/anydesk.key
-RUN apt-key add /app/anydesk.key
 RUN apt-key add /app/linux_signing_key.pub
-RUN set -ex; \
-    apt-get update \
-    && apt-get install -y --no-install-recommends \
-	anydesk
+RUN set -ex
 
 
 ENV UNAME pacat
